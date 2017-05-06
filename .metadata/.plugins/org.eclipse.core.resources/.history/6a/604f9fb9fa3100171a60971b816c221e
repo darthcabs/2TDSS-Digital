@@ -1,0 +1,71 @@
+package br.com.fiap.bean;
+
+import javax.annotation.PostConstruct;
+import javax.faces.application.FacesMessage;
+import javax.faces.bean.ManagedBean;
+import javax.faces.context.FacesContext;
+
+import br.com.fiap.bo.AtletaBO;
+import br.com.fiap.entity.Atleta;
+import br.com.fiap.exception.DBException;
+import br.com.fiap.exception.IdNotFoundException;
+
+@ManagedBean
+public class AtletaBean {
+	private Atleta atleta;
+	private AtletaBO bo;
+
+	public Atleta getAtleta() {
+		return atleta;
+	}
+
+	public void setAtleta(Atleta atleta) {
+		this.atleta = atleta;
+	}
+	
+	@PostConstruct
+	public void init(){
+		atleta = new Atleta();
+		bo = new AtletaBO();
+	}
+	
+	public String cadastrar(){
+		FacesMessage msg;
+		try {
+			if (atleta.getCodigo() == 0) {
+				bo.cadastrar(atleta);
+				msg = new FacesMessage("Atleta cadastrado");
+				atleta = null;	
+			}else{
+				bo.atualizar(atleta);
+				msg = new FacesMessage("Atleta atualizado");
+			}
+		} catch (DBException e) {
+			e.printStackTrace();
+			msg = new FacesMessage("Erro");
+			return "lista-atleta?faces-redirect=true";
+		}
+		FacesContext.getCurrentInstance().addMessage(null, msg);
+		//Manter a mensagem após um redirect
+		FacesContext.getCurrentInstance().getExternalContext().getFlash().setKeepMessages(true);
+		return "lista-atleta?faces-redirect=true";
+	}
+	
+	public String deletar(int codigo){
+		FacesMessage msg;
+		try {
+			bo.remover(codigo);
+			msg = new FacesMessage("Atleta removido");
+		} catch (DBException e) {
+			e.printStackTrace();
+			msg = new FacesMessage("Erro");
+			return "lista-atleta";
+		} catch (IdNotFoundException e) {
+			e.printStackTrace();
+			msg = new FacesMessage("Erro");
+			return "lista-atleta";
+		}
+		FacesContext.getCurrentInstance().addMessage(null, msg);
+		return "lista-atleta?faces-redirect=true";
+	}
+}

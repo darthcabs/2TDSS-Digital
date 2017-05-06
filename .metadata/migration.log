@@ -1,0 +1,41 @@
+
+INFO     Validating project: 04-WebserviceSOAP-provider
+INFO     Finished validating project: 04-WebserviceSOAP-provider
+
+INFO     Validating project: 05-EstoqueWS
+INFO     Finished validating project: 05-EstoqueWS
+
+INFO     Validating project: 06-WebserviceSOAP-requester
+INFO     Finished validating project: 06-WebserviceSOAP-requester
+
+INFO     Validating project: 07-WebserviceSOAP-correios
+INFO     Finished validating project: 07-WebserviceSOAP-correios
+
+INFO     Validating project: 08-Loja-Central-App
+INFO     Finished validating project: 08-Loja-Central-App
+
+INFO     Validating project: 09-WebserviceSOAP-provider-banco
+INFO     Finished validating project: 09-WebserviceSOAP-provider-banco
+
+INFO     Validating project: 10-WebserviceSOAP-requester-banco
+INFO     Finished validating project: 10-WebserviceSOAP-requester-banco
+
+INFO     Validating project: 12-WebserviceRestfull-server
+INFO     Finished validating project: 12-WebserviceRestfull-server
+
+INFO     Validating project: 13-WebserviceRestfull-server-banco
+INFO     Finished validating project: 13-WebserviceRestfull-server-banco
+
+INFO     Validating project: 16-JSF-Introducao
+INFO     Finished validating project: 16-JSF-Introducao
+
+INFO     Validating project: 17-JSF-WebserviceResfull-client-banco
+INFO     Finished validating project: 17-JSF-WebserviceResfull-client-banco
+
+INFO     Validating project: 18-JSF-WebserviceSOAP-resquester-banco
+INFO     Finished validating project: 18-JSF-WebserviceSOAP-resquester-banco
+
+INFO     Validating project: 19-JSF-JPA
+INFO     Finished validating project: 19-JSF-JPA
+
+Migration complete

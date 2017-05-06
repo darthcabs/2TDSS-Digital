@@ -1,0 +1,11 @@
+#Fri May 05 21:19:29 BRT 2017
+vl=How many times the 'Finish' button pressed during the day
+l=Wizard class name
+ct=jbt
+d=1494029969573
+c=0
+cmp=usage
+a=finishWizard
+cl=com.ibm.etools.common.internal.migration.framework.ui.MigrationFrameworkWizard
+v=2.2.1
+s=2
