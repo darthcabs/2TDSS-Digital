@@ -5,39 +5,46 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
+import javax.validation.constraints.DecimalMin;
+
+import org.hibernate.validator.constraints.NotBlank;
 
 @Entity
-@SequenceGenerator(name="seqBebida", sequenceName="SQ_BEBIDA", allocationSize=1)
-public class Bebida {
+@SequenceGenerator(name="seqPet",sequenceName="SQ_PETISCO",allocationSize=1)
+public class Petisco {
+
 	@Id
-	@GeneratedValue(generator="seqBebida", strategy=GenerationType.SEQUENCE)
+	@GeneratedValue(generator="seqPet",strategy=GenerationType.SEQUENCE)
 	private int codigo;
 	
+	@NotBlank
 	private String nome;
 	
-	private double preco;
-	
+	@DecimalMin("0")
+	private double valor;
+
 	public int getCodigo() {
 		return codigo;
 	}
-	
+
 	public void setCodigo(int codigo) {
 		this.codigo = codigo;
 	}
-	
+
 	public String getNome() {
 		return nome;
 	}
-	
+
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	
-	public double getPreco() {
-		return preco;
+
+	public double getValor() {
+		return valor;
+	}
+
+	public void setValor(double valor) {
+		this.valor = valor;
 	}
 	
-	public void setPreco(double preco) {
-		this.preco = preco;
-	}
 }

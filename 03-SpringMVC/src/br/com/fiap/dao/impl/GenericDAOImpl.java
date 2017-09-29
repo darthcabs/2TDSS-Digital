@@ -2,8 +2,10 @@ package br.com.fiap.dao.impl;
 
 import java.lang.reflect.ParameterizedType;
 import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+
 import br.com.fiap.dao.GenericDAO;
 import br.com.fiap.exception.IdNotFoundException;
 
@@ -17,7 +19,7 @@ public class GenericDAOImpl<T,K> implements GenericDAO<T, K>{
 	
 	//Construtor
 	@SuppressWarnings("unchecked")
-	public GenericDAOImpl() {
+	public GenericDAOImpl() {		
 		classe = (Class<T>) ((ParameterizedType)getClass()
 			.getGenericSuperclass()).getActualTypeArguments()[0];
 	}

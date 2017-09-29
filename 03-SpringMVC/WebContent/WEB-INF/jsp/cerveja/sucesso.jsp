@@ -4,12 +4,16 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Sucesso</title>
+<title>Cadastrado com Sucesso</title>
 </head>
 <body>
 
-	<h1>Cadastrado com sucesso!</h1>
-	<h2>${p.nome }, ${p.preco }</h2>
+	<h1>Cadastrado com sucesso</h1>
+	<h2>${c.nome }, ${c.preco }, ${c.tipo }</h2>
 
 </body>
 </html>
+
+
+
+
